@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update destroy ]
+  before_action :set_index_title, only: :index
+  before_action :set_show_title, only: :show
 
   # GET /users or /users.json
   def index
@@ -69,3 +71,12 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :age)
     end
 end
+
+def set_index_title
+  @index_title = "ユーザー一覧"
+end
+
+def set_show_title
+  @show_title = "ユーザー詳細"
+end
+

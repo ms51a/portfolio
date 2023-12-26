@@ -3,4 +3,7 @@ Rails.application.routes.draw do
   root 'top#index'
 
   resources :welcomes, only: :index
+  resource :login, only: %i[new create]
+  resource :logout, only: %i[ show ]
 end
+

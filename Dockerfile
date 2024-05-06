@@ -10,12 +10,12 @@ RUN apt-get update -qq \
 && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
 && apt-get update -qq \
 && apt-get install -y build-essential libpq-dev nodejs yarn
-RUN mkdir /v3_beginner_rails
-WORKDIR /v3_beginner_rails
+RUN mkdir /portfolio
+WORKDIR /portfolio
 RUN gem install bundler:2.3.17
-COPY Gemfile /v3_beginner_rails/Gemfile
-COPY Gemfile.lock /v3_beginner_rails/Gemfile.lock
-COPY yarn.lock /v3_beginner_rails/yarn.lock
+COPY Gemfile /portfolio/Gemfile
+COPY Gemfile.lock /portfolio/Gemfile.lock
+COPY yarn.lock /portfolio/yarn.lock
 RUN bundle install
 RUN yarn install
-COPY . /v3_beginner_rails
+COPY . /portfolio

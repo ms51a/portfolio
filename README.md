@@ -37,3 +37,13 @@ MVPリリース時：写真投稿機能、タグ機能、いいね機能、コ�
 ■ 機能の実装方針予定
 一般的なCRUD以外の実装予定の機能についてそれぞれどのようなイメージ(使用するAPIや)で実装する予定なのか現状考えているもので良いので教えて下さい。
 タグ検索：ransack、ImageMagickを使った画像の統一、ユーザー登録はデバイス機能を使います
+
+■ 使用予定の技術スタック
+フロントエンド：JavaScript
+CSSフレームワーク：BootstrapもしくはTailwind css, daisyUI
+バックエンド：Ruby3.2.2/Ruby on Rails 7.0.8
+データベース：MySQL
+認証：device
+環境構築：docker
+インフラ：Fly.io
+バージョン管理：GitHub

@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_28_081637) do
-
+ActiveRecord::Schema[7.0].define(version: 2024_05_13_234939) do
+  create_table "posts", charset: "utf8mb4", force: :cascade do |t|
+    t.string "gacha_date", null: false
+    t.string "gacha_place", null: false
+    t.string "body", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end

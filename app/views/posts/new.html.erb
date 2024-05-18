@@ -1,0 +1,19 @@
+<%= form_with model: @post do |f| %>
+  <div class="mb-3">
+    <%= f.label :gacha_date %>
+    <%= f.text_field :gacha_date, class: "form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= f.label :gacha_place %>
+    <%= f.text_field :gacha_place, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :body %>
+    <%= f.text_area :body, class: "form-control", rows: "10" %>
+  </div>
+  
+  <%= f.submit nil, class: "btn btn-primary" %>
+<% end %>
+
+  

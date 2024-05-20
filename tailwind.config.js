@@ -5,6 +5,13 @@ module.exports = {
     './app/assets/stylesheets/**/*.css',
     './app/javascript/**/*.js'
   ],
+  theme: {
+    extend: {},
+      fontFamily: {
+        dotgothic16: ["Dotgothic16", "sans-serif"],
+      },
+    },
+  
   plugins: [
     require('daisyui')
   ],

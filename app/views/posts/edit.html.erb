@@ -1,0 +1,24 @@
+<%= @post %>
+
+<%= form_with model: @post do |f| %>
+    <div class="mb-3">
+      <%= f.label :gacha_date, "いつ出会った？" %>
+      <%= f.text_field :gacha_date %>
+    </div>
+  
+    <div class="mb-3">
+      <%= f.label :gacha_place %>
+      <%= f.text_field :gacha_place%>
+    </div>
+  
+    <div class="mb-3">
+      <%= f.label :body %>
+      <%= f.text_area :body %>
+    </div>
+
+<button class="btn btn-outline btn-warning">
+更新する
+</button>
+<% end %>
+
+#<%= link_to "更新する", post_path(@post) %>

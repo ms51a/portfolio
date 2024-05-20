@@ -1,1 +1,15 @@
-aaaa
+<%= link_to '新規投稿', new_post_path %>
+
+<ul>
+  <% @post.each do |post| %>
+    <!-- daisyUI>layout>Divider -->
+    <div class="flex flex-col w-full">
+  <div class="divider divider-warning">Warning</div>
+    <li>
+      <p><%= link_to post.gacha_date, post_path(post) %></p>
+      <p><%= link_to post.gacha_place, post_path(post) %></p>
+      <p><%= link_to post.body, post_path(post) %></p>
+    </li>
+    </div>
+  <% end %>
+</ul>

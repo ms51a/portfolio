@@ -1,39 +1,24 @@
-<!DOCTYPE html>
-<html lang="ja">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./app/builds/application.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
-    <link href="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==">
-    <title>CapselToy</title>
-  </head>
-  
-  <body class="font-dotgothic16 bg-black font-bold text-blue">
-  <header class="py-6">
-    <div class="container mx-auto flex justify-between items-center px-8 md:px-14 lg:px-24 w-full">
-    <div>Capsel toy</div>
-    <div>
-    <a href="#login">ログイン</a>
-    <i class="fa-solid fa-bars"></i>
+  <body class="font-dotgothic16 font-extrabold bg-main min-h-screen">
+    <header class="py-6 ">
+      <div class="container mx-auto flex justify-between items-center px-8 md:px-14 lg:px-24 w-full">
+      <div>Capsel toy</div>
+      <div>
+      <a href="#login">ログイン</a>
 
-  <label class="btn btn-circle swap swap-rotate">
-  <!-- this hidden checkbox controls the state -->
-  <input type="checkbox" />
-  <!-- hamburger icon -->
-  <svg class="swap-off fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"/></svg>
-  <!-- close icon -->
-  <svg class="swap-on fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><polygon points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49"/></svg>
-  </label>
+    <label class="btn btn-circle swap swap-rotate">
+    <!-- this hidden checkbox controls the state -->
+    <input type="checkbox" />
+    <!-- hamburger icon -->
+    <svg class="swap-off fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"/></svg>
+    <!-- close icon -->
+    <svg class="swap-on fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><polygon points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49"/></svg>
+    </label>
   
-  </div>
-</div>
-</header>
+    </div>
+    </div>
+     </header>
 
-<%= form_with model: @post do |f| %>
+  <%= form_with model: @post do |f| %>
 
   <div class="mb-3">
   <textarea class="textarea textarea-warning" placeholder="daisyUI仮置き"></textarea>
@@ -52,7 +37,7 @@
   </div>
   <button class="btn btn-outline btn-warning">投稿する
   </button>
-<% end %>
+  <% end %>
 </body>
 
   

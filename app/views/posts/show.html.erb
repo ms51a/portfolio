@@ -1,10 +1,14 @@
+<body class="bg-main text-white">
+<div class="text-white">
 <%= @post %>
 <%= @post.gacha_date %>
 <%= @post.gacha_place %>
 <%= @post.body %>
+</div>
 <button class="btn btn-outline btn-warning">
 <%= link_to "編集", edit_post_path %>
 </button>
 <button class="btn btn-outline btn-secondary">
-<%= link_to "削除", post_path(@post), data: { turbo_method: :delete, turbo_confirm: "投稿を削除しますか" } %>
+<%= link_to "削除", post_path(@post), method: :delete , data: {"turbolinks" => false}%>
 </button>
+</body>

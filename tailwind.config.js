@@ -10,6 +10,9 @@ module.exports = {
       fontFamily: {
         dotgothic16: ["Dotgothic16", "sans-serif"],
       },
+      colors: {
+        main: "#2936B1",
+      },
     },
   
   plugins: [

@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+  #before_action :authenticate_user!
+  #ユーザがログインしていない場合はログインページにリダイレクトさせます。
+  #onlyやexceptでアクションを設定することが多いです。
   def new
     @post = Post.new
   end

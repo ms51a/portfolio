@@ -41,6 +41,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
    def user_params
      params.require(:user).permit(:email, :name, :password, :password_confirmation)
    end
+    # アカウント編集後、プロフィール画面に移動する
+   def after_update_path_for(resource)
+    user_path(id: current_user.id)
+   end
+    #パスワードを入れずにユーザー情報を編集できるようにします
+   def update_resource(resource, params)
+    resource.update_without_password(params)
+   end
 
   # GET /resource/cancel
   # Forces the session data which is usually expired after sign

@@ -4,6 +4,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
   def change
     create_table :users do |t|
       ## Database authenticatable
+      #データベースに保存されたパスワードが正しいか検証をします。
+      #同時にパスワードの暗号化も行います。
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
 
@@ -22,6 +24,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
       # t.string   :last_sign_in_ip
 
       ## Confirmable
+      #新規登録時にメール認証機能をつけます。
       # t.string   :confirmation_token
       # t.datetime :confirmed_at
       # t.datetime :confirmation_sent_at

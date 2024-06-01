@@ -1,9 +1,9 @@
-  <body class="font-dotgothic16 font-extrabold bg-main min-h-screen">
-    <header class="py-6 ">
-      <div class="container mx-auto flex justify-between items-center px-8 md:px-14 lg:px-24 w-full">
-      <div>Capsel toy</div>
-      <div>
-      <a href="#login">ログイン</a>
+<body class="font-dotgothic16 font-extrabold bg-main min-h-screen">
+  <header class="py-6 ">
+    <div class="container mx-auto flex justify-between items-center px-8 md:px-14 lg:px-24 w-full">
+    <div>Capsel toy</div>
+    <div>
+    <a href="#login">ログイン</a>
 
     <label class="btn btn-circle swap swap-rotate">
     <!-- this hidden checkbox controls the state -->
@@ -16,12 +16,12 @@
   
     </div>
     </div>
-     </header>
+  </header>
 
   <%= form_with model: @post do |f| %>
 
   <div class="mb-3">
-  <textarea class="textarea textarea-warning" placeholder="daisyUI仮置き"></textarea>
+  <textarea class="ytext-yellow-500" placeholder="daisyUI仮置き"></textarea>
     <%= f.label :gacha_date, "いつ出会った？" %>
     <%= f.text_field :gacha_date %>
   </div>  
@@ -38,6 +38,14 @@
   <button class="btn btn-outline btn-warning">投稿する
   </button>
   <% end %>
+
+  <% if user_signed_in? %>
+  #user_signed_in?ヘルパー現在ログイン中のユーザーがいるかどうかを確認します。
+          <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to 'Sign up', new_user_registration_path %></li>
+          <li><%= link_to 'Login', new_user_session_path %></li>
+        <% end %>
 </body>
 
   

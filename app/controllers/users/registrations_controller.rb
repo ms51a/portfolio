@@ -46,9 +46,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
     user_path(id: current_user.id)
    end
     #パスワードを入れずにユーザー情報を編集できるようにします
-   def update_resource(resource, params)
-    resource.update_without_password(params)
-   end
+   #def update_resource(resource, params)
+    #resource.update_without_password(params)
+   #end
 
   # GET /resource/cancel
   # Forces the session data which is usually expired after sign

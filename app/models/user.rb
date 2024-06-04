@@ -4,6 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :posts, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  #has_many :likes_posts, through: :likes, source: :post
+            
+
   validates :name, presence: true
   validates :introduction, length: { maximum: 200 }
 end

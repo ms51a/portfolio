@@ -34,17 +34,18 @@ class PostsController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
+  end
 
     def destroy
       @post = Post.find(params[:id])
       @post.destroy!
-      redirect_to post_path
+      redirect_to posts_path
     end
-  end
+  
 
   private
 
   def post_params
-    params.require(:post).permit(:gacha_date, :gacha_place, :body)
+    params.require(:post).permit(:gacha_date, :gacha_place, :body).merge(user_id: current_user.id)
   end
 end

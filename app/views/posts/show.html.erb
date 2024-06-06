@@ -1,0 +1,20 @@
+<body class="bg-main text-white">
+<div class="text-white">
+<%= @post %>
+<%= @post.gacha_date %>
+<%= @post.gacha_place %>
+<%= @post.body %>
+</div>
+<%= button_to "編集", edit_post_path(@post), method: :get, class: "btn btn-outline btn-warning" %>
+<%= button_to "削除", post_path(@post), method: :delete, class: "btn btn-outline btn-secondary" %>
+
+<% if @post.like?(current_user) %>
+    <%= button_to post_likes_path(@post.id), method: :delete do %>
+        <span style="color:red;">❤︎</span>
+    <% end %>
+<% else %>
+    <%= button_to post_likes_path(@post.id), method: :post do %>
+        <span>❤︎</span>
+    <% end %>
+<% end %>
+</body>

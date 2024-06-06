@@ -1,2 +1,4 @@
 // Entry point for the build script in your package.json
-import * as bootstrap from "bootstrap"
+import "../assets/stylesheets/application.tailwind.css";
+import Rails from "@rails/ujs"
+Rails.start();

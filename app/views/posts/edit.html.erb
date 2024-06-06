@@ -1,0 +1,20 @@
+<%= form_with model: @post do |f| %>
+    <div class="mb-3">
+      <%= f.label :gacha_date, "いつ出会った？" %>
+      <%= f.text_field :gacha_date, class: "text-black" %>
+    </div>
+  
+    <div class="mb-3">
+      <%= f.label :gacha_place %>
+      <%= f.text_field :gacha_place, class: "text-black"%>
+    </div>
+  
+    <div class="mb-3">
+      <%= f.label :body %>
+      <%= f.text_area :body, class: "text-black" %>
+    </div>
+
+<button class="btn btn-outline btn-warning">
+更新する
+</button>
+<% end %>

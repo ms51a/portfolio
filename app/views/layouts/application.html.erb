@@ -1,50 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
+
   <head>
-    <title>RUNTEQ Rails入門STEPアプリ</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= stylesheet_link_tag "application" %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+    <link href="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==">
+    <title>CapselGems</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application" %>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <%= javascript_include_tag "application", defer: true %>
   </head>
 
-  <body>
-    <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-      <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">RUNTEQ Rails入門STEPアプリ</a>
-      <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="col-md-3 text-end">
-      <% if current_user.present? %>
-      <span class="btn btn-primary"><%= current_user.name %></span>
-      <%= link_to "ログアウト", logout_path, class: "btn btn-outline-primary me-2" %>
-      <% else %>
-      <%= link_to 'ログイン', new_login_path, class: 'btn btn-outline-primary me-2' %>
-        <% end %>
-      </div>
-
-    </header>
-
-    <div class="container-fluid">
-      <div class="row">
-        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-          <div class="position-sticky pt-3">
-            <ul class="nav flex-column">
-              <li class="nav-item">
-                <%= link_to 'トップ', root_path, class: 'nav-link active', 'aria-current': 'page' %>
-                <%= link_to 'ユーザー', users_path, class: 'nav-link active', 'aria-current': 'page' %>
-                <%= link_to 'タスク', tasks_path, class: 'nav-link active', 'aria-current': 'page' %>
-                </li>
-            </ul>
-          </div>
-        </nav>
-
-        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-          <%= yield %>
-        </main>
-      </div>
-    </div>
+  <body class="font-dotgothic16 font-extrabold text-white bg-main min-h-screen min-w-screen">
+    <%= yield %>
   </body>
 </html>

@@ -1,0 +1,16 @@
+<body class="">
+<%= link_to '新規投稿', new_post_path %>
+
+
+<ul>
+  <% @post.each do |post| %>
+    <div class="w-full border border-black p-16 lg:px-32 lg:py-20 flex justify-center lg:justify-start flex-wrap">
+    <li>
+      <p><%= link_to post.gacha_date, post_path(post) %></p>
+      <p><%= link_to post.gacha_place, post_path(post) %></p>
+      <p><%= link_to post.body, post_path(post) %></p>
+    </li>
+    </div>
+  <% end %>
+</ul>
+</body>

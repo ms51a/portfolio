@@ -8,11 +8,12 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-      if @post.save
-        redirect_to action: :index
-      else
-        render :new, status: :unprocessable_entity
-      end
+
+    if @post.save
+      redirect_to action: :index
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
   
   def index
@@ -20,7 +21,11 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    if user_signed_in?
+      @post = Post.find(params[:id])
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def edit
@@ -29,6 +34,7 @@ class PostsController < ApplicationController
  
   def update
     @post = Post.find(params[:id])
+
     if @post.update(post_params)
       redirect_to @post
     else
@@ -36,11 +42,11 @@ class PostsController < ApplicationController
     end
   end
 
-    def destroy
-      @post = Post.find(params[:id])
-      @post.destroy!
-      redirect_to posts_path
-    end
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy!
+    redirect_to posts_path
+  end
   
 
   private
